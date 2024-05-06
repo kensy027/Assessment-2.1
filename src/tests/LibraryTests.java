@@ -26,6 +26,9 @@ import libraries.Multimedia;
 public class LibraryTests {
     private Library library;
 
+    /**
+     * Sets up the library and initializes it with some books and multimedia items before each test.
+     */
     @BeforeEach
     void setUp() {
         library = new Library();
@@ -35,6 +38,9 @@ public class LibraryTests {
         library.addMultimedia(new Multimedia("Abbey Road", "The Beatles", "CD", 45, 1969, "1st", "G"));
     }
 
+    /**
+     * Tests if the Library instance is successfully created.
+     */
     @Test
     void testLibraryConstructor() {
         try {
@@ -45,6 +51,9 @@ public class LibraryTests {
         }
     }
 
+    /**
+     * Tests adding a new book to the library and ensures the book count is incremented.
+     */
     @Test
     void testAddBook() {
         try {
@@ -57,6 +66,9 @@ public class LibraryTests {
         }
     }
 
+    /**
+     * Tests adding a new multimedia item to the library and checks if the multimedia count is properly updated.
+     */
     @Test
     void testAddMultimedia() {
         try {
@@ -69,6 +81,9 @@ public class LibraryTests {
         }
     }
 
+    /**
+     * Tests the sorting of books by title and edition to ensure they are ordered correctly.
+     */
     @Test
     void testSortBooksByTitleAndEdition() {
         try {
@@ -80,6 +95,9 @@ public class LibraryTests {
         }
     }
 
+    /**
+     * Tests the sorting of multimedia items by title and type, verifying correct ordering.
+     */
     @Test
     void testSortMultimediaByTitleAndType() {
         try {
@@ -91,6 +109,9 @@ public class LibraryTests {
         }
     }
 
+    /**
+     * Tests sorting books in reverse order by author and rating to confirm that the order is reversed as expected.
+     */
     @Test
     void testSortBooksByAuthorAndRatingReverse() {
         try {
@@ -102,6 +123,9 @@ public class LibraryTests {
         }
     }
 
+    /**
+     * Tests searching for books by title prefix and verifies that the correct books are found.
+     */
     @Test
     void testSearchBooksByTitle() {
         try {
