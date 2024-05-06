@@ -25,6 +25,17 @@ public class Book implements Comparable<Book> {
     private String edition;
     private String rating;
 
+    /**
+     * Constructor to initialize a Book object with all necessary details.
+     *
+     * @param title Title of the book.
+     * @param author Author of the book.
+     * @param genre Genre of the book.
+     * @param pageCount Number of pages in the book.
+     * @param publicationYear Year the book was published.
+     * @param edition Edition of the book.
+     * @param rating Audience rating of the book (e.g., G, PG, R).
+     */
     public Book(String title, String author, String genre, int pageCount, int publicationYear, String edition, String rating) {
         this.title = title;
         this.author = author;
@@ -91,6 +102,14 @@ public class Book implements Comparable<Book> {
         this.rating = rating;
     }
 
+    /**
+     * Compares this Book with another Book primarily based on title, and secondarily on edition,
+     * for sorting purposes.
+     *
+     * @param other Another book to compare against.
+     * @return a negative integer, zero, or a positive integer as this book is less than, equal to,
+     *         or greater than the specified book.
+     */
     @Override
     public int compareTo(Book other) {
         int titleComparison = this.title.compareTo(other.title);
@@ -100,6 +119,12 @@ public class Book implements Comparable<Book> {
         return this.edition.compareTo(other.edition);
     }
 
+    /**
+     * Checks if this book is equal to another object by comparing titles and editions.
+     *
+     * @param obj the object to compare with.
+     * @return true if the given object represents a Book equivalent to this book, false otherwise.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -108,11 +133,21 @@ public class Book implements Comparable<Book> {
         return title.equals(book.title) && edition.equals(book.edition);
     }
 
+    /**
+     * Returns a hash code value for the book, which is derived from the title and edition.
+     *
+     * @return a hash code value for this book.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(title, edition);
     }
 
+    /**
+     * Returns a string representation of the book, which includes all fields of the book.
+     *
+     * @return a string representation of this book.
+     */
     @Override
     public String toString() {
         return "Book{" +

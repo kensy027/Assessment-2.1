@@ -27,21 +27,34 @@ public class Library {
         multimediaItems = new ArrayList<>();
     }
 
-    // Method to add a book
+    /**
+     * Adds a book to the library.
+     * @param book The book to be added to the library.
+     */
     public void addBook(Book book) {
         books.add(book);
     }
 
-    // Method to add a multimedia item
+    /**
+     * Adds a multimedia item to the library.
+     * @param multimedia The multimedia item to be added to the library.
+     */
     public void addMultimedia(Multimedia multimedia) {
         multimediaItems.add(multimedia);
     }
 
-    // Getters for books and multimedia items
+    /**
+     * Returns the list of all books in the library.
+     * @return A list of books.
+     */
     public List<Book> getBooks() {
         return books;
     }
 
+    /**
+     * Returns the list of all multimedia items in the library.
+     * @return A list of multimedia items.
+     */
     public List<Multimedia> getMultimediaItems() {
         return multimediaItems;
     }
@@ -71,13 +84,21 @@ public class Library {
                                                     .thenComparing(Multimedia::getRating).reversed());
     }
 
-    // Search for books by title prefix
+    /**
+     * Searches for books in the library whose titles start with a specified prefix.
+     * @param titlePrefix The prefix to search for in book titles.
+     * @return A list of books whose titles start with the specified prefix.
+     */
     public List<Book> searchBooksByTitle(String titlePrefix) {
         return books.stream()
                     .filter(book -> book.getTitle().startsWith(titlePrefix))
                     .collect(Collectors.toList());
     }
 
+    /**
+     * Returns a string representation of the library, including lists of books and multimedia items.
+     * @return A string representation of the library.
+     */
     @Override
     public String toString() {
         return "Library{" +
